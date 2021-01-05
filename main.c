@@ -32,7 +32,7 @@ T_Tab_Case T_Voisines;
 /////FONCTIONS/////
 ///////////////////
 
-int Lire_Entier(min, max)      //verifie si le nombre saisie est correct ou non
+int Lire_Entier(int min,int max)      //verifie si le nombre saisi est correct ou non
 {
    int var;
    do
@@ -247,7 +247,7 @@ int Hasard(int min,int max)
 
 
 //Calcul du Nimber
-int Nimber(int T_Pions,int l,int c,int N,int M)
+int Nimber(int T_Pions,int l,int c,int N,int M) // L'erreur est due au fait qu'il n'y ait pas de fonction Nimber dans un header
 {
    int a=(N-l)%3;
    int b=(M-c)%3;
@@ -295,7 +295,7 @@ void Maj_Grille(T_Tab_Case T_Pions, int N,int M,int R)
 //Coup du joueur
 void Coup_Joueur(T_Grille Grille, T_Tab_Case T_Pions, T_Tab_Case T_Voisines, int R, int N, int M)
 {
-   int i, ChoixPion, ChoixDep, nbcases;
+   int i, ChoixDep, nbcases;
 
    printf("A votre tour !\n");
      
@@ -323,7 +323,7 @@ void Coup_Joueur(T_Grille Grille, T_Tab_Case T_Pions, T_Tab_Case T_Voisines, int
 //Coup ordinateur hasard
 void Coup_Hasard(T_Grille Grille,T_Tab_Case T_Pions,T_Tab_Case T_Voisines,int pions, int N, int M)
 {
-   int i=0,rep,rep2;
+   int rep,rep2;
    
    rep=Hasard(1,pions);
 
@@ -381,7 +381,7 @@ void Coup_Gagnant(T_Grille Grille,T_Tab_Case T_Pions,T_Tab_Case T_Voisines,int p
 int main()
 {  char rep;
    do{
-      int i,fin=0,Has;
+      int fin=0,Has;
       printf("Demarage du -[Jeu de NIM]- \n\n");
       char *str1="Vous avez perdu, dommage !";    //message si perdu
       char *str2="Vous avez gagne, bravo !";     //message si gagne
